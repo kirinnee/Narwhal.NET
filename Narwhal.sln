@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.329
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Narwhal", "Narwhal\Narwhal.csproj", "{9c637d10-6ebf-4c49-be54-42584822f15a}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9c637d10-6ebf-4c49-be54-42584822f15a}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9c637d10-6ebf-4c49-be54-42584822f15a}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9c637d10-6ebf-4c49-be54-42584822f15a}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9c637d10-6ebf-4c49-be54-42584822f15a}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {483467bc-561a-4579-b2a2-ff97837f3abc}
+	EndGlobalSection
+EndGlobal
