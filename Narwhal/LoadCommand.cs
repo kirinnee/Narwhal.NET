@@ -7,12 +7,12 @@ using Kirinnee.Helper;
 
 namespace narwhal
 {
-    public class SaveCommand : ICommandObject
+    public class LoadCommand : ICommandObject
     {
-        public string Name { get; } = "Save";
-        public string Description { get; } = "Saves a docker volume as a tarball";
-        public string Usage { get; } = "narwhal save <volume name> <tarball name> <relative path to save to>";
-        public string[] Command { get; } = {"save"};
+        public string Name { get; } = "Load";
+        public string Description { get; } = "Load a tarball into a name volumed";
+        public string Usage { get; } = "narwhal load <path to tarball> <volume name>";
+        public string[] Command { get; } = {"load"};
         public string PerfectCommand => string.Join("", Command);
         public IEnumerable<string> PossibleFlags { get; } = new string[] { };
         public IEnumerable<string> PossibleVariables { get; } = new string[] { };
@@ -20,18 +20,19 @@ namespace narwhal
         public Task<CommandResult> Execute(string[] fullCommand, string[] rawArgs, Dictionary<string, string> variables,
             string[] flags)
         {
-            if (rawArgs.Length < 1)
+            if (rawArgs.Length < 2)
             {
-                return Task.FromResult(new CommandResult(false, "At least 1 argument is needed"));
+                return Task.FromResult(new CommandResult(false, "At least 2 argument is needed"));
             }
-            var volume = rawArgs[0];
-            var tarball = rawArgs.Length > 1 ? rawArgs[1] : "data";
-            var path = rawArgs.Length > 2 ? rawArgs[2] : "./";
+
+            var path = rawArgs[0];
+            var volume = rawArgs[1];
+
             var narwhal = new Narwhal(false);
-            var errors = narwhal.Save(volume, tarball, path);
+            var errors = narwhal.Load(volume, path);
             var enumerable = errors as string[] ?? errors.ToArray();
             return Task.FromResult(!enumerable.Any()
-                ? new CommandResult(true, "Saved!")
+                ? new CommandResult(true, $"Loaded into volume <{volume}>!")
                 : new CommandResult(false, enumerable.JoinBy("\n")));
         }
     }

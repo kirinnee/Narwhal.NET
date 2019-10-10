@@ -12,7 +12,7 @@
 		<PackageProjectUrl>https://gitlab.com/nuget-packages/image-deployer</PackageProjectUrl>
 		<RepositoryUrl>https://gitlab.com/nuget-packages/image-deployer.git</RepositoryUrl>
 		<RepositoryType>git</RepositoryType>
-		<Version>0.0.2</Version>
+		<Version>0.0.3</Version>
 	</PropertyGroup>
 	
 	<PropertyGroup>

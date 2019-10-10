@@ -10,8 +10,8 @@ namespace narwhal
     {
         internal static void Main(string[] args)
         {
-            var exe = new CommandExecutor("Narwhal", "Simple Command line to load and save docker volumes", "0.0.2",
-                new List<ICommandObject> {new SaveCommand()});
+            var exe = new CommandExecutor("Narwhal", "Simple Command line to load and save docker volumes", "0.0.3",
+                new List<ICommandObject> {new SaveCommand(), new LoadCommand()});
             Async(args, exe).GetAwaiter().GetResult();
         }
 
