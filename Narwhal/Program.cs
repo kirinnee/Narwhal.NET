@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Linq;
 
-namespace main
+namespace narwhal
 {
-    public class Program
+    public static class Program
     {
         private static void Main(string[] args)
         {
@@ -27,11 +27,6 @@ namespace main
                     Console.WriteLine(args[0].ToUpper());
                 }
             }
-        }
-
-        public static string ReverseString(string x)
-        {
-            return string.Join("", x.ToCharArray().Reverse());
         }
     }
 }
